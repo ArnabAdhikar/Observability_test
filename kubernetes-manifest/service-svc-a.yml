@@ -5,6 +5,9 @@ metadata:
     job: node-api
     app: a-service
   name: a-service
+  annotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/path: /metrics
 spec:
   ports:
   - name: a-service-port
@@ -15,4 +18,3 @@ spec:
   selector:
     app: service-a-deployment
   type: NodePort
-
